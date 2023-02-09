@@ -7,8 +7,13 @@ class SampleGUI:
     def __init__(self, window):
         self.window = window
         self.window.title("Alpine Ascents Patrol Sum Automation")
-        self.window.geometry("400x200")
+        self.window.geometry("400x212")
         self.window.resizable(False, False)
+        
+        self.btn = Button(self.window, text="Run Automation", bg="white", fg="black", height= 5, width=20, command=self.run)
+        self.btn.pack(pady=43)
+        self.output = Text(self.window, font=('Arial', 20), height=1, width=20)
+        self.output.pack()
 
         # -------------List of CMs-------------
         self.dude08_PatrolTimeInMin = []
@@ -24,8 +29,6 @@ class SampleGUI:
         self.rosegirlTime = []
         self.rosegirl_total = 0
         # -------------------------------------
-
-        self.btn = Button(self.window, text="Click Me", bg="white", fg="black", height= 5, width=20, command=self.run).pack()
 
     def GetTime(self):
         with open('data.txt', 'r') as file:
@@ -120,11 +123,20 @@ class SampleGUI:
             file.write(f"rosegirlye: {self.rosegirl_total} minutes.\n")
             # -------------------------------------
 
+    def switchButtonState(self):
+        if (self.btn['state'] == NORMAL):
+            self.btn.config(state=DISABLED)
+        else:
+            self.btn.config(state=DISABLED)
+
     def run(self):
         if __name__ == "__main__":
+            self.output.delete('1.0', END)
             self.GetTime()
             self.CaculateTime()
             self.PostResults()
+            self.output.insert(INSERT, "Finished! See results.txt")
+            self.switchButtonState()
 
 window = Tk()
 SampleGUI(window)
