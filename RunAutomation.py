@@ -438,12 +438,16 @@ class SampleGUI:
 
     def run(self):
         if __name__ == "__main__":
-            self.output.delete('1.0', END)
-            self.getTime()
-            self.caculateTime()
-            self.postResults()
-            self.output.insert(INSERT, "Finished! See results.txt")
-            self.switchButtonState()
+            try:
+                self.output.delete('1.0', END)
+                self.getTime()
+                self.caculateTime()
+                self.postResults()
+                self.output.insert(INSERT, "Finished! See results.txt")
+                self.switchButtonState()
+            except:
+                self.output.delete('1.0', END)
+                self.output.insert(INSERT, "Error.")
 
 window = Tk()
 SampleGUI(window)
