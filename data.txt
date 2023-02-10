@@ -1,4 +1,2 @@
-Quick tutorial: https://youtu.be/XStxsNU5daw
-
 Paste patrol data in this text file. Make sure that this text file is in the same directory as the RunAutomation.exe file.
 (Please make sure that this text file is cleared before pasting patrol data)
