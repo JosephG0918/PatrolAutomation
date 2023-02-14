@@ -427,7 +427,7 @@ class SampleGUI:
             file.write(f"{self.extractedCMs[16]}: {self.subject17_total} minutes.\n")
             file.write(f"{self.extractedCMs[17]}: {self.subject18_total} minutes.\n")
             file.write(f"{self.extractedCMs[18]}: {self.subject19_total} minutes.\n")
-            file.write(f"{self.extractedCMs[19]}: {self.subject20_total} minutes.\n")
+            file.write(f"{self.extractedCMs[19]}: {self.subject20_total} minutes.")
             # -------------------------------------
 
     def switchButtonState(self):
